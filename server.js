@@ -5,7 +5,7 @@ const clientRouter = require("./routes/clients");
 const app = express();
 
 mongoose
-  .connect("mongodb://localhost/lawfirm", {
+  .connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
