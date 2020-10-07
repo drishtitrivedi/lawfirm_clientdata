@@ -1,6 +1,6 @@
 // connection.js
 const mongoose = require("mongoose");
-const connection = "mongodb://localhost:27017/lawfirm";
+const connection = "mongodb://mongo:27017/lawfirm";
 const connectDb = () => {
   return mongoose.connect(connection, {
     useNewUrlParser: true,
