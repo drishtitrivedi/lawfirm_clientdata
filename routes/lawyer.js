@@ -20,7 +20,7 @@ router.post("/", async (req, res, next) => {
   const { error } = validateLawyer(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let id = (await Lawyer.find().Collection.estimatedDocumentCount()) + 1;
+  let id = (await Lawyer.find().estimatedDocumentCount()) + 1;
   let lawyer = new Lawyer({ id: id, name: req.body.name });
   lawyer = await lawyer.save();
 
