@@ -29,6 +29,7 @@ router.post("/", async (req, res, next) => {
     address: req.body.address,
     phone: req.body.phone,
     assigned_lawyer: req.body.assigned_lawyer,
+    notes: req.body.notes,
     date_added: new Date(),
   });
 

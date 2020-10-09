@@ -9,6 +9,7 @@ function validateClient(client) {
     address: Joi.string().min(5).max(500).required(),
     phone: Joi.string().min(10).max(10).required(),
     assigned_lawyer: Joi.required(),
+    notes: Joi.required(),
   });
 
   return schema.validate(client);
@@ -42,6 +43,10 @@ const Client = mongoose.model(
       maxlength: 10,
     },
     assigned_lawyer: LawyerSchema,
+    notes: {
+      type: String,
+      required: true,
+    },
     date_added: {
       type: Date,
       required: true,
